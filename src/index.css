@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/* Design tokens, sampled from the reference image. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  --color-accent: #73beb0;
+  --color-accent-hover: #5fae9f;   /* new: slightly darker for hover */
+  --color-canvas: #f7f7f7;
+  --color-ink: #35424c;
+  --color-line: #e5e5e5;
+
+  --color-slate: #4a5969;
+  --color-teal: #427973;
+  --color-mist: #5d838a;
+  /* The one orchestrated moment: the yellow highlight wipes in behind the name. */
+  --animate-wipe: wipe 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms both;
+
+  @keyframes wipe {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 7rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-accent font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
