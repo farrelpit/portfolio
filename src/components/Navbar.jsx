@@ -23,7 +23,6 @@ function LogoMark() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu with Escape.
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => e.key === "Escape" && setOpen(false);
@@ -40,7 +39,7 @@ export default function Navbar() {
         <a
           href="#top"
           aria-label={`${profile.name}, back to top`}
-          className="grid size-10 shrink-0 place-items-center rounded-full bg-accent sm:size-12"
+          className="grid size-10 shrink-0 place-items-center rounded-full bg-accent transition-transform duration-200 hover:scale-105 motion-reduce:hover:scale-100 sm:size-12"
         >
           <LogoMark />
         </a>
@@ -102,7 +101,7 @@ export default function Navbar() {
       {open && (
         <div
           id="mobile-menu"
-          className="absolute inset-x-0 top-full mt-2 rounded-[28px] border border-black/5 bg-white p-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] lg:hidden"
+          className="absolute inset-x-0 top-full mt-2 origin-top animate-fade-up rounded-[28px] border border-black/5 bg-white p-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] motion-reduce:animate-none lg:hidden"
         >
           <ul className="flex flex-col">
             {sections.map((s) => (

@@ -8,7 +8,6 @@ import Footer from "./components/Footer.jsx";
 
 export default function App() {
   return (
-    // The outer padding shows the yellow frame (body background).
     <div className="min-h-screen p-2 sm:p-4 lg:p-[30px]">
       <a
         href="#main"

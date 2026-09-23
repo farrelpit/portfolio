@@ -1,4 +1,5 @@
 import Section from "./Section.jsx";
+import Reveal from "./Reveal.jsx";
 import { projects } from "../data/portfolio.js";
 
 function Tags({ items }) {
@@ -52,10 +53,8 @@ function ProjectCard({ project }) {
 
   return (
     <article
-      className={`flex flex-col justify-between gap-10 rounded-[28px] p-7 sm:p-8 md:last:col-span-2 lg:last:col-span-1 ${
-        featured
-          ? "bg-accent md:col-span-2 lg:row-span-2 lg:p-10"
-          : "bg-white"
+      className={`hover-lift flex h-full flex-col justify-between gap-10 rounded-[28px] p-7 sm:p-8 ${
+        featured ? "bg-accent lg:p-10" : "bg-white"
       }`}
     >
       <div>
@@ -90,8 +89,16 @@ export default function Projects() {
   return (
     <Section id="works" title="Selected works">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p) => (
-          <ProjectCard key={p.title} project={p} />
+        {projects.map((p, i) => (
+          <Reveal
+            key={p.title}
+            delay={i * 90}
+            className={`md:last:col-span-2 lg:last:col-span-1 ${
+              p.featured ? "md:col-span-2 lg:row-span-2" : ""
+            }`}
+          >
+            <ProjectCard project={p} />
+          </Reveal>
         ))}
       </div>
     </Section>

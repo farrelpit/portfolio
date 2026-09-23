@@ -1,6 +1,5 @@
-import { profile, stats } from "../data/portfolio.js";
+import { profile, heroCtas } from "../data/portfolio.js";
 
-/* Decorative white pills that flank the headline (xl screens and up). */
 function OrbitIcon() {
   return (
     <svg viewBox="0 0 64 28" className="w-16" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden="true">
@@ -29,16 +28,16 @@ function Pill({ side, children }) {
   return (
     <div
       aria-hidden="true"
-      className={`absolute top-[15rem] hidden h-[72px] w-[148px] place-items-center rounded-full border border-black/5 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.03)] xl:grid ${
+      className={`float-slow absolute top-[15rem] hidden h-[72px] w-[148px] place-items-center rounded-full border border-black/5 bg-white shadow-[0_2px_16px_rgba(0,0,0,0.03)] xl:grid ${
         side === "left" ? "left-[4%]" : "right-[4%]"
       }`}
+      style={{ animationDelay: side === "left" ? "0s" : "-3s" }}
     >
       {children}
     </div>
   );
 }
 
-/* Thin guide lines that run in from the edges. Each entry is [top, width]. */
 const leftLines = [
   ["10.75rem", "22%"],
   ["17.25rem", "4%"],
@@ -67,7 +66,7 @@ function Guides() {
 
 export default function Hero() {
   return (
-    <section id="top" className="relative px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:pt-32">
+    <section id="top" className="relative px-4 pb-12 pt-16 sm:px-6 sm:pb-16 sm:pt-24 lg:pt-32">
       <Guides />
       <Pill side="left">
         <OrbitIcon />
@@ -94,16 +93,20 @@ export default function Hero() {
           {profile.intro}
         </p>
 
-        <dl className="mt-16 grid grid-cols-2 gap-y-8 rounded-[24px] bg-white px-4 py-8 sm:mt-20 md:grid-cols-3">
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col-reverse items-center gap-2">
-              <dt className="text-sm text-neutral-600">{s.label}</dt>
-              <dd className="text-3xl font-medium tracking-tight slashed-zero tabular-nums sm:text-4xl">
-                {s.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <div className="mx-auto mt-10 flex max-w-xs flex-col gap-3 sm:mt-12 sm:max-w-none sm:flex-row sm:justify-center">
+          <a
+            href={heroCtas.primary.href}
+            className="rounded-full bg-accent px-7 py-4 text-center text-base font-medium transition duration-200 hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[0_8px_20px_rgba(0,0,0,0.1)] motion-reduce:hover:translate-y-0"
+          >
+            {heroCtas.primary.label}
+          </a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="rounded-full border border-ink/10 bg-white px-7 py-4 text-center text-base font-medium transition duration-200 hover:-translate-y-0.5 hover:bg-ink/5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] motion-reduce:hover:translate-y-0"
+          >
+            {heroCtas.secondary.label}
+          </a>
+        </div>
       </div>
     </section>
   );

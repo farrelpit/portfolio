@@ -1,15 +1,5 @@
-// ---------------------------------------------------------------------------
-// ALL SITE CONTENT LIVES IN THIS FILE.
-//
-// Everything below is PLACEHOLDER content. Search for your own details and
-// replace them. Nothing else in the project needs to change for a content edit.
-//
-// Don't forget to also update the <title> and meta description in index.html.
-// ---------------------------------------------------------------------------
-
 export const profile = {
   name: "Farrel Putra Imanuel The",
-  // Hero reads: "Hey, I'm {name}" / "a {role} {headlineTail}"
   role: "web developer",
   headlineTail: "with an eye for detail",
   intro:
@@ -18,49 +8,43 @@ export const profile = {
   email: "farrelputra141@gmail.com",
 };
 
-// Shown in the navbar and footer. Remove any you don't use.
 export const socials = [
   { label: "GitHub", href: "https://github.com/farrelpit" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/farrel-putra-imanuel-the75ba16326/" },
 ];
 
-// Yellow pill on the right of the navbar (opens the visitor's email app).
 export const navCta = { label: "Contact", hint: "say hi" };
 
-// Four numbers under the hero. Keep them honest.
-export const stats = [
-  { value: "1", label: "Year of experience" },
-  { value: "2", label: "Teams and clients" },
-  { value: "6", label: "Projects built" },
-];
-
+export const heroCtas = {
+  primary: { label: "View my work", href: "#works" },
+  secondary: { label: "Contact me" },
+};
 export const about = {
   statement:
-    "I've been helping teams turn rough ideas into fast, dependable web products.",
+    "Computer Science undergraduate building full-stack web products, one feature at a time.",
   paragraphs: [
-    "I'm a web developer who enjoys the whole front-end journey: shaping component systems, sweating the small interactions, and keeping pages quick on slow connections.",
-    "Outside of work I contribute to open source, write about what I learn, and tinker with side projects that never quite stay small.",
+    "I'm currently studying Computer Science at BINUS University, where I've picked up hands-on experience building full-stack web applications.",
+    "I've worked in Agile/Scrum teams to ship features in fast-paced environments.",
   ],
   current: {
     title: "Associate Member",
     company: "BINUS IT Division",
     description:
-      "Building design-system components and performance tooling used by every product team.",
+      "Developing frontend features in React and integrating REST APIs as part of a small team.",
     status: "Open to new opportunities",
   },
 };
 
-// No links or screenshots, so each card is text only.
-// `featured: true` renders the card wider and in yellow (use on one project).
+
 export const projects = [
   {
     title: "Jabodetabek House Price Prediction",
     type: "Machine learning",
-    year: "2025", // set the real year
+    year: "2026",
     description:
       "Predicts house prices across Jabodetabek. Compared Random Forest, LightGBM, and CatBoost, then deployed CatBoost, the most accurate on individual predictions, as a Streamlit app.",
     tech: ["Python", "scikit-learn", "CatBoost", "Optuna", "Streamlit"],
-    github: "https://github.com/farrelpit/ML-project", // your README didn't include the repo link
+    github: "https://github.com/farrelpit/ML-project",
   },
   {
     title: "Budget Control System",
@@ -83,27 +67,30 @@ export const projects = [
 
 export const skills = [
   {
-    group: "Languages",
-    items: ["JavaScript", "TypeScript", "HTML", "CSS", "Python", "SQL", "C/C++", "Java"],
+    group: "Core",
+    items: ["JavaScript", "TypeScript", "HTML/CSS", "React", "Python", "Java", "C/C++", "SQL", "REST APIs"],
   },
   {
-    group: "Frontend",
-    items: ["React", "Tailwind CSS", "Redux", "Vite"],
-  },
-  {
-    group: "Data and APIs",
-    items: ["PostgreSQL", "REST APIs", "Supabase"],
+    group: "Familiar with",
+    items: ["Laravel", "ASP.NET Core Web API", "SSMS", "PostgreSQL (Supabase)"],
   },
   {
     group: "Tools",
-    items: ["Git", "GitHub Actions", "Figma", "Azure DevOps"],
+    items: ["Git", "Postman", "Swagger", "Supabase", "Azure DevOps"],
+  },
+  {
+    group: "Methods",
+    items: ["Agile", "Scrum"],
+  },
+  {
+    group: "Soft Skills",
+    items: ["Logical Thinking", "Analytical Skills", "Teamwork", "Communication", "Problem Solving", "Adaptability"],
   },
 ];
 
-// Newest first. Add education here too if you like.
 export const experience = [
   {
-    role: "Associate Programmer",
+    role: "Associate Member",
     org: "BINUS IT Division",
     period: "Mar 2026 - Present",
     bullets: [

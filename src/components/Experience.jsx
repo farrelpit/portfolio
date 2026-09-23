@@ -1,8 +1,7 @@
 import Section from "./Section.jsx";
+import Reveal from "./Reveal.jsx";
 import { experience } from "../data/portfolio.js";
 
-/* A real timeline: order matters, so the rail and dots carry meaning.
-   The filled yellow dot marks the current (first) entry. */
 export default function Experience() {
   return (
     <Section id="experience" title="Experience">
@@ -12,9 +11,11 @@ export default function Experience() {
           className="absolute bottom-10 left-[7px] top-10 w-px bg-neutral-300"
         />
         {experience.map((job, i) => (
-          <li
+          <Reveal
+            as="li"
             key={`${job.org}-${job.period}`}
-            className="relative grid gap-3 rounded-[28px] bg-white p-7 sm:p-9 md:grid-cols-[10rem_1fr] md:gap-8"
+            delay={i * 100}
+            className="hover-lift relative grid gap-3 rounded-[28px] bg-white p-7 sm:p-9 md:grid-cols-[10rem_1fr] md:gap-8"
           >
             <span
               aria-hidden="true"
@@ -34,7 +35,7 @@ export default function Experience() {
                 ))}
               </ul>
             </div>
-          </li>
+          </Reveal>
         ))}
       </ol>
     </Section>

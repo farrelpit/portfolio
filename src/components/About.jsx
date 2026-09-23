@@ -1,4 +1,5 @@
 import Section from "./Section.jsx";
+import Reveal from "./Reveal.jsx";
 import { about, profile } from "../data/portfolio.js";
 
 export default function About() {
@@ -7,7 +8,7 @@ export default function About() {
   return (
     <Section id="about">
       <div className="grid gap-4 lg:grid-cols-[1.45fr_1fr]">
-        <div className="flex flex-col rounded-[28px] bg-white p-8 sm:p-12">
+        <Reveal className="flex flex-col rounded-[28px] bg-white p-8 sm:p-12">
           <h2 className="max-w-[20ch] text-balance text-3xl font-medium leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[2.75rem]">
             {about.statement}
           </h2>
@@ -19,9 +20,12 @@ export default function About() {
           <p className="mt-10 text-sm text-neutral-600 lg:mt-auto lg:pt-10">
             Based in {profile.location}
           </p>
-        </div>
+        </Reveal>
 
-        <div className="flex min-h-[320px] flex-col justify-between rounded-[28px] bg-gradient-to-br from-slate via-ink to-ink p-8 text-white sm:p-10">
+        <Reveal
+          delay={120}
+          className="flex min-h-[320px] flex-col justify-between rounded-[28px] bg-gradient-to-br from-slate via-ink to-ink p-8 text-white sm:p-10"
+        >
           <div>
             <h3 className="text-2xl font-medium tracking-tight sm:text-3xl">
               {current.title}
@@ -35,7 +39,7 @@ export default function About() {
             <span aria-hidden="true" className="size-2 rounded-full bg-accent" />
             {current.status}
           </p>
-        </div>
+        </Reveal>
       </div>
     </Section>
   );
