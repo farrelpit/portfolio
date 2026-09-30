@@ -67,24 +67,35 @@ export const projects = [
 
 export const skills = [
   {
-    group: "Core",
-    items: ["JavaScript", "TypeScript", "HTML/CSS", "React", "Python", "Java", "C/C++", "SQL", "REST APIs"],
+    group: "Programming Languages",
+    items: ["JavaScript", "TypeScript", "Python", "Java", "C/C++", "SQL"],
   },
   {
-    group: "Familiar with",
-    items: ["Laravel", "ASP.NET Core Web API", "SSMS", "PostgreSQL (Supabase)"],
+    group: "Frameworks & Webs",
+    items: ["React", "HTML/CSS", "ASP.NET Core Web API"],
+  },
+  {
+    group: "Databases",
+    items: ["SQL Server (SSMS)", "Supabase"],
   },
   {
     group: "Tools",
-    items: ["Git", "Postman", "Swagger", "Supabase", "Azure DevOps"],
+    items: ["Git", "Postman", "Swagger", "Azure DevOps"],
   },
   {
-    group: "Methods",
-    items: ["Agile", "Scrum"],
+    group: "Practices",
+    items: ["Agile/Scrum", "REST API"],
   },
   {
     group: "Soft Skills",
-    items: ["Logical Thinking", "Analytical Skills", "Teamwork", "Communication", "Problem Solving", "Adaptability"],
+    items: [
+      "Problem Solving",
+      "Logical Thinking",
+      "Analytical Skills",
+      "Teamwork",
+      "Communication",
+      "Adaptability",
+    ],
   },
 ];
 
